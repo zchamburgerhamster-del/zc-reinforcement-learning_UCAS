@@ -27,7 +27,7 @@
 <img width="808" height="556" alt="image" src="https://github.com/user-attachments/assets/0c8f6928-e51b-4bdc-a5e4-0997e478bbee" />
 </br>
 </br>
-这个概率分布R，具体内容为执行动作a不同拉杆产生的概率
+这个概率分布R，具体内容为执行动作a,不同奖励产生的概率
 </br>
 3.累积懊悔
 </br>
