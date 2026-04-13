@@ -26,6 +26,9 @@
 <img width="671" height="267" alt="image" src="https://github.com/user-attachments/assets/1aad1398-695e-46c9-b824-26b4750f0596" />
 <img width="808" height="556" alt="image" src="https://github.com/user-attachments/assets/0c8f6928-e51b-4bdc-a5e4-0997e478bbee" />
 </br>
+</br>
+这个概率分布R，具体内容为执行动作a不同拉杆产生的概率
+</br>
 3.累积懊悔
 </br>
 <img width="563" height="316" alt="image" src="https://github.com/user-attachments/assets/004396be-41a4-4d78-b50b-037c0d7b5426" />
