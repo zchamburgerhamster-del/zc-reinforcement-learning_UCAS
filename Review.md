@@ -109,7 +109,7 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 </br>
 <img width="1206" height="1005" alt="eb710c4a844057a556f30cc947cb404c" src="https://github.com/user-attachments/assets/88a0a379-61dc-4c5e-adf9-4f8b484fa9d8" />
 </br>
-上面两图为贝尔曼方程实操，方便理解
+上面两图为贝尔曼方程实操，方便理解*Q动作方程不用乘以概率
 <img width="487" height="380" alt="image" src="https://github.com/user-attachments/assets/901630a9-bce6-4a0d-a926-ac87ae3aab7a" />
 </br>
 贝尔曼方程：本状态价值=本状态的奖励+折扣因子X从本状态出发到达所有点的概率X本状态后继的价值
