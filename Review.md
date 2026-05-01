@@ -90,7 +90,7 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 <img width="476" height="457" alt="image" src="https://github.com/user-attachments/assets/bc5f2de9-88b8-42da-a5fe-a9568b422612" />
 </br>
 接近1的折扣因子关注长期累计奖励，接近0的折扣因子考虑短期奖励
-1。某点的回报：从某点开始出发每个状态点的奖励乘以折扣之和
+1.某点的回报：从某点开始出发每个状态点的奖励乘以折扣之和
 </br>
 <img width="493" height="176" alt="image" src="https://github.com/user-attachments/assets/31f5feb4-320c-47dd-bea1-f20b63f40430" />
 </br>
@@ -105,6 +105,11 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 公式理解：某点的价值等于[本状态的奖励+折扣因子X上一个状态的价值]即
 贝尔曼方程[***无敌重点***]
 </br>
+<img width="1206" height="1514" alt="eee4d4a883563cadeb96247716b6bd5a" src="https://github.com/user-attachments/assets/49c6dc4f-5f00-4c9f-a160-459aa0f4f96e" />
+</br>
+<img width="1206" height="1005" alt="eb710c4a844057a556f30cc947cb404c" src="https://github.com/user-attachments/assets/88a0a379-61dc-4c5e-adf9-4f8b484fa9d8" />
+</br>
+上面两图为贝尔曼方程实操，方便理解
 <img width="487" height="380" alt="image" src="https://github.com/user-attachments/assets/901630a9-bce6-4a0d-a926-ac87ae3aab7a" />
 </br>
 贝尔曼方程：本状态价值=本状态的奖励+折扣因子X从本状态出发到达所有点的概率X本状态后继的价值
