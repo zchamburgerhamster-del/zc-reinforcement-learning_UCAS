@@ -113,8 +113,8 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 <img width="487" height="380" alt="image" src="https://github.com/user-attachments/assets/901630a9-bce6-4a0d-a926-ac87ae3aab7a" />
 </br>
 贝尔曼方程：本状态价值=本状态的奖励+折扣因子X从本状态出发到达所有点的概率X本状态后继的价值
-#<h1 align="left">M3.3马尔可夫决策过程</h1>
-#<h2 align="left">定义</h2>
+#<h2 align="left">M3.3马尔可夫决策过程</h2>
+#<h3 align="left">定义</h3>
 如果在MRP过程中加入刺激（agent的动作）那么叫做MDP
 </br>
 <img width="330" height="31" alt="image" src="https://github.com/user-attachments/assets/8fc01e5f-c8ba-4aea-85ed-63d3d500c9da" />构成
@@ -122,4 +122,28 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 <img width="570" height="228" alt="image" src="https://github.com/user-attachments/assets/43f06ff1-3de3-454f-80da-d1701b8d53d6" />
 </br>
 不再使用类似 MRP 定义中的状态转移矩阵方式，而是直接表示成了状态转移函数。（即P函数，表示在状态s下执行a动作到达s2概率）
-
+ </br>
+ <img width="360" height="223" alt="image" src="https://github.com/user-attachments/assets/760722f0-1c14-42a0-bfad-9492837aeac6" />
+</br>
+如上图所示为一个agent和环境MDP交互过程，agent根据当前状态St选择一个动作At，然后环境反馈一个下一状态St+1（通过状态转移函数），返回一个本轮的奖励Rt
+#<h3 align="left">3.3.1策略（策略函数）</h3>
+智能体的策略（Policy）通常用字母<img width="12" height="22" alt="image" src="https://github.com/user-attachments/assets/d34b1945-8584-4fad-8f04-8e2602fd94d4" />
+1.表示在输入状态s情况下采取动作a的概率。当一个策略是确定性策略（deterministic policy）时，它在每个状态时只输出一个确定性的动作，即只有该动作的概率为 1，其他动作的概率为 0；当一个策略是随机性策略（stochastic policy）时，它在每个状态时输出的是关于动作的概率分布，然后根据该分布进行采样就可以得到一个动作。
+2.MDP中策略只与当前状态有关，不需要考虑历史状态
+3.MRP中价值函数与概率和上一状态有关
+4.但是MDP中价值函数和动作有关，分为状态价值函数与动作价值函数
+#<h3 align="left">3.3.2状态价值函数</h3>
+</br>
+<img width="600" height="152" alt="image" src="https://github.com/user-attachments/assets/95ecb504-8398-4f91-8e07-b49ab48c9440" />
+</br>
+所有奖励的衰减之和称为回报Gt（Return）
+</br>
+<img width="496" height="83" alt="image" src="https://github.com/user-attachments/assets/936ad565-6968-4de8-bbc6-69f73e34740d" />
+长得和MRP里的状态价值函数差不多
+关于<img width="148" height="37" alt="image" src="https://github.com/user-attachments/assets/72463b3e-dcc4-461d-aac8-51762be867fe" />可以展开为<img width="353" height="142" alt="image" src="https://github.com/user-attachments/assets/972e41e6-22e3-4944-a56a-5d8aaf6bd190" />
+而那个期望E可以表达为从该状态出发去往各个状态对应价值与概率之和（期望本身就是概率乘以获得值）
+</br>
+#<h3 align="left">3.3.3动作价值函数</h3>
+</br>
+<img width="601" height="466" alt="image" src="https://github.com/user-attachments/assets/6c84a8f1-ff85-4374-b997-6eedf541b199" />
+</br>
