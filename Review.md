@@ -1,4 +1,4 @@
-#<h1 align="center">强化学习笔记</h1>
+<img width="330" height="31" alt="image" src="https://github.com/user-attachments/assets/3a8af7ae-ddb6-4115-888e-2e851f25471c" />#<h1 align="center">强化学习笔记</h1>
 #<h1 align="left">M1基础</h1>
 #1.强化学习与有监督学习的区别，两者目标不同
 #<img width="1172" height="281" alt="image" src="https://github.com/user-attachments/assets/3b5fad11-bfeb-43ca-8504-5822c72da814" />
@@ -113,4 +113,13 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 <img width="487" height="380" alt="image" src="https://github.com/user-attachments/assets/901630a9-bce6-4a0d-a926-ac87ae3aab7a" />
 </br>
 贝尔曼方程：本状态价值=本状态的奖励+折扣因子X从本状态出发到达所有点的概率X本状态后继的价值
-#<h2 align="left">M3.3马尔可夫决策过程</h2>
+#<h1 align="left">M3.3马尔可夫决策过程</h1>
+#<h2 align="left">定义</h2>
+如果在MRP过程中加入刺激（agent的动作）那么叫做MDP
+</br>
+<img width="330" height="31" alt="image" src="https://github.com/user-attachments/assets/8fc01e5f-c8ba-4aea-85ed-63d3d500c9da" />构成
+</br>
+<img width="570" height="228" alt="image" src="https://github.com/user-attachments/assets/43f06ff1-3de3-454f-80da-d1701b8d53d6" />
+</br>
+不再使用类似 MRP 定义中的状态转移矩阵方式，而是直接表示成了状态转移函数。（即P函数，表示在状态s下执行a动作到达s2概率）
+
