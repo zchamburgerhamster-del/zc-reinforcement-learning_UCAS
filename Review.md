@@ -147,3 +147,22 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 </br>
 <img width="601" height="466" alt="image" src="https://github.com/user-attachments/assets/6c84a8f1-ff85-4374-b997-6eedf541b199" />
 </br>
+3.3.3动作价值函数总结
+</br>
+动作价值函数：
+</br>
+<img width="321" height="48" alt="image" src="https://github.com/user-attachments/assets/36bda09a-b7e4-49c1-8237-0d3f2a472aea" />
+</br>
+解释为：在状态s下，执行动作a下获得汇报G的期望值
+</br>
+状态价值函数与动作价值函数的关系：
+</br>
+<img width="256" height="53" alt="image" src="https://github.com/user-attachments/assets/67d5ca1e-06a8-422d-8d20-1727fe035300" />
+</br>
+</b>状态价值函数V等于策略pai所有概率乘以对应获得的Q之和</b>
+</br>
+动作价值函数展开
+</br>
+<img width="411" height="58" alt="image" src="https://github.com/user-attachments/assets/e7528c35-a9f9-414e-9a4c-3913427f044d" />
+</br>
+</b>动作价值函数展开为：在使用策略pai，状态s下采取动作a的价值等于此时此刻即时奖励r（s,a）加上经过衰减后的所有可能从本状态s出发的下一个状态转移概率与相应价值的乘积</b>
