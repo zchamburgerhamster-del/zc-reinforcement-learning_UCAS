@@ -177,3 +177,12 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 #<h4 align="left">一个例子</h4>
 <img width="637" height="415" alt="image" src="https://github.com/user-attachments/assets/951fb670-5be3-4905-9985-c643bdbca28b" />
 </br>
+<img width="1166" height="755" alt="image" src="https://github.com/user-attachments/assets/6cd40ba3-be9c-459e-9f1f-2ab315c2d43d" />
+</br>
+<img width="860" height="482" alt="image" src="https://github.com/user-attachments/assets/71079c7e-60f4-4996-b28c-2305c22cb12c" />
+</br>
+【个人理解】首先在MRP的价值方程里面是没有动作概率这一说的，所以我么们可以把动作价值方程改造为状态价值方程，具体如何人做呢，首先改造r(s,a)那就是把某个s的动作概率乘以对应奖励那么就得出了一个新的r，P(s'|s,a)也是同理，后续再利用MRP里面的：
+</br>
+<img width="337" height="71" alt="image" src="https://github.com/user-attachments/assets/d3cc0cbd-6bfd-45fc-a50f-560b4f2bd578" />
+</br>
+联立多个方程组解出每个V(s)接着代入Q的方程就好了
