@@ -173,3 +173,7 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 <img width="566" height="210" alt="image" src="https://github.com/user-attachments/assets/bff002dc-bd4e-4bab-876c-f5541444f506" />
 </br>
 解释：这里推导主要就是用v=pai x Q 把Q展开带入
+</br>
+#<h4 align="left">一个例子</h4>
+<img width="637" height="415" alt="image" src="https://github.com/user-attachments/assets/951fb670-5be3-4905-9985-c643bdbca28b" />
+</br>
