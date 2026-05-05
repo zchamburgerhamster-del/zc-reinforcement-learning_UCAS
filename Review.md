@@ -153,7 +153,7 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 </br>
 <img width="321" height="48" alt="image" src="https://github.com/user-attachments/assets/36bda09a-b7e4-49c1-8237-0d3f2a472aea" />
 </br>
-解释为：在状态s下，执行动作a下获得汇报G的期望值
+解释为：在状态s下，执行动作a下获得回报G的期望值
 </br>
 状态价值函数与动作价值函数的关系：
 </br>
