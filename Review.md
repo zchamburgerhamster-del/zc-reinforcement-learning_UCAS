@@ -132,7 +132,7 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 2.MDP中策略只与当前状态有关，不需要考虑历史状态
 3.MRP中价值函数与概率和上一状态有关
 4.但是MDP中价值函数和动作有关，分为状态价值函数与动作价值函数
-#<h3 align="left">3.3.2状态价值函数</h3>
+#<h3 align="left">3.3.2状态价值函数-与MRP状态价值函数区别在于与动作有关，与其他状态无关</h3>
 </br>
 <img width="600" height="152" alt="image" src="https://github.com/user-attachments/assets/95ecb504-8398-4f91-8e07-b49ab48c9440" />
 </br>
@@ -166,3 +166,10 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 <img width="411" height="58" alt="image" src="https://github.com/user-attachments/assets/e7528c35-a9f9-414e-9a4c-3913427f044d" />
 </br>
 </b>动作价值函数展开为：在使用策略pai，状态s下采取动作a的价值等于此时此刻即时奖励r（s,a）加上经过衰减后的所有可能从本状态s出发的下一个状态转移概率与相应价值的乘积</b>
+</br>
+#<h3 align="left">3.3.4贝尔曼期望方程</h3>
+贝尔曼期望方程包括MDP下的V状态价值方程与MDP下的Q动作价值方程
+</br>
+<img width="566" height="210" alt="image" src="https://github.com/user-attachments/assets/bff002dc-bd4e-4bab-876c-f5541444f506" />
+</br>
+解释：这里推导主要就是用v=pai x Q 把Q展开带入
