@@ -186,3 +186,22 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 <img width="337" height="71" alt="image" src="https://github.com/user-attachments/assets/d3cc0cbd-6bfd-45fc-a50f-560b4f2bd578" />
 </br>
 联立多个方程组解出每个V(s)接着代入Q的方程就好了
+#<h2 align="left">M3.4蒙特卡洛方法</h2>
+</br>
+<img width="395" height="352" alt="image" src="https://github.com/user-attachments/assets/ddf340bb-e8ba-4e6c-9c00-853f7e3bf6c5" />
+</br>
+总结：蒙特卡洛方法就是用概率统计来估计数值，首先来回顾下：<img width="1462" height="505" alt="image" src="https://github.com/user-attachments/assets/536c770d-bb83-4c40-b0a9-55fff4ee8bbb" />
+</br>
+【重点】所以MDP中的蒙特卡洛方法就可以理解为：从s出发，采样n个回报G，求和，然后再除以n就代表状态价值<img width="381" height="80" alt="image" src="https://github.com/user-attachments/assets/2a3bcfa2-ffea-4837-b670-3e976558fc08" />
+【G为累计回报！！！！！！！一整条序列叠加】
+</br>
+【重点】我们介绍的蒙特卡洛价值估计方法会在该状态每一次出现时计算它的回报。还有一种选择是一条序列只计算一次回报，也就是这条序列第一次出现该状态时计算后面的累积奖励，而后面再次出现该状态时，该状态就被忽略了。
+</br>
+【重点-第一种计算方法，总回报除以计数器，利用大数定律】
+<img width="667" height="280" alt="image" src="https://github.com/user-attachments/assets/d193a3e8-d51d-4566-ba4b-44289a2e85ca" />
+</br>
+【重点-第二种方法：增量式，前一轮的结果加上本轮的平均到n轮，G-V(s)为本轮的实际回报】
+【G为累计回报！！！！！！！一整条序列叠加】
+<img width="576" height="122" alt="image" src="https://github.com/user-attachments/assets/ccc3281d-9490-43f0-a955-f7554ed85067" />
+
+</br>
