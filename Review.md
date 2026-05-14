@@ -203,5 +203,32 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 【重点-第二种方法：增量式，前一轮的结果加上本轮的平均到n轮，G-V(s)为本轮的实际回报】
 【G为累计回报！！！！！！！一整条序列叠加】
 <img width="576" height="122" alt="image" src="https://github.com/user-attachments/assets/ccc3281d-9490-43f0-a955-f7554ed85067" />
-
 </br>
+#<h2 align="left">M3.5占用度量</h2>
+<img width="679" height="168" alt="image" src="https://github.com/user-attachments/assets/b49b4604-f6c8-4a09-8407-40739bb1ed65" />
+</br>
+<img width="637" height="415" alt="image" src="https://github.com/user-attachments/assets/1e80d1ca-9071-450e-b183-7c40f9ab739d" />
+</br>
+【解释】如图如果我们选择了一个策略为尽快到达终点s5，那么显然智能体不会从s3先去s4再去s5，即使从s4到s5会有很大的奖励10，所以因为得不到10，所以agent在s3的概率比较小，所以引出不同策略下，agent访问›状态的概率分布不同  
+</br>
+<img width="1230" height="1064" alt="image" src="https://github.com/user-attachments/assets/363695e5-1cdb-45d1-9a7b-a1e46e4d22e6" />
+</br>
+<img width="1224" height="516" alt="image" src="https://github.com/user-attachments/assets/f8253d5e-62f2-4c27-8260-26b54e3ba466" />
+</br>
+#<h2 align="left">M3.6最优策略</h2>
+1.首先V *为 至少存在一个策略比其他所有策略都好或者至少存在一个策略不差于其他所有策略，这个策略就是最优策略（optimal policy）
+</br>
+<img width="1080" height="174" alt="image" src="https://github.com/user-attachments/assets/2c288fd1-9cbf-4985-92cf-faf2a3629503" />
+</br>
+2.同理，Q *如下
+</br>
+<img width="988" height="166" alt="image" src="https://github.com/user-attachments/assets/2a3cf41b-1d17-4130-a0b0-216fea74ef8a" />
+</br>
+3.因为Q的公式为：<img width="648" height="86" alt="image" src="https://github.com/user-attachments/assets/614c0a69-3158-4f4c-832d-94d9c56d2bb6" />，所以要想叫Q最大，那么后续的V‘必然都要为最大，所以V *与Q *关系如下：
+</br>
+<img width="1234" height="484" alt="image" src="https://github.com/user-attachments/assets/1e1ba2cf-91a8-4f2f-adea-b62a7ab0cfb8" />
+///////以上有些不明白
+
+
+
+
