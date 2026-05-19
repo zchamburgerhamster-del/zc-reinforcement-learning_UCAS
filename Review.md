@@ -327,4 +327,13 @@ new_v[s] = max(qsa_list)
 </br>
 这个Q直接被当作普通状态价值v来计算了
 </br>
-
+#<h2 align="left">M4.5动态规划小结</h2>
+1.策略迭代算法用的是贝尔曼期望方程</br>
+<img width="442" height="87" alt="image" src="https://github.com/user-attachments/assets/c1b981fe-54d9-4cc9-9a70-50ae28533a63" /></br>
+他的过程为：评估-更新-评估-更新。。。。。。直到评估函数收敛，然后利用策略提升定理选出max的
+</br>
+2.价值迭代算法用的是贝尔曼最优方程
+</br>
+<img width="391" height="54" alt="image" src="https://github.com/user-attachments/assets/2406e2c3-6f15-41f7-ac84-988f1945d697" />
+</br>
+仅维护价值V(s)，无显式策略，每次仅仅更新一轮V，直接更新策略为max那个
