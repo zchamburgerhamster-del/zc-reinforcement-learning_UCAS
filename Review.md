@@ -278,3 +278,40 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 #<h3 align="left">M4.3.3策略迭代算法</h3>
 1.策略迭代算法的过程：评估-提升-评估-提升。。。
 2.策略迭代算法的基本流程：
+</br>
+<img width="924" height="676" alt="image" src="https://github.com/user-attachments/assets/356dd00b-cad0-4649-b76a-6f932573a38d" />
+</br>
+解释：
+</br>
+【策略评估阶段】</br>
+a.首先令delta=0，当delta大于某个阈值（未收敛）的时候进入策略评估阶段</br>
+b.接着遍历全部状态并且赋值给v</br>
+c.接着利用这个状态值和贝尔曼方程计算后续其他所有状态的值</br>
+d.取出delta与当前状态和其他状态差值中最大的那个，完成收敛</br>
+【策略提升阶段】</br>
+利用评估阶段得出v结果，遍历所有动作a，找到max那个作为新的策略。</br>
+3.策略迭代算法实例演示</br>
+<img width="1554" height="1304" alt="image" src="https://github.com/user-attachments/assets/4add159f-b37f-4aa4-b2ec-cb539d08a209" />
+</br>
+<img width="702" height="476" alt="image" src="https://github.com/user-attachments/assets/59ad2a20-66dc-4565-a72f-6077b4e3a4e8" />
+</br>
+a.策略评估和策略提升在policy_iteration中交替执行，他们通过如下方式联系起来：因为在策略提升中的贪心寻找最大的Q需要用到各个状态的v，所以这里就用到了策略评估当中算出来的在采取不同策略pai下不同状态值
+</br>
+b.如何实现计算的？<img width="593" height="134" alt="image" src="https://github.com/user-attachments/assets/9138a5f9-683a-4cab-87a6-b813b72d9482" />
+</br>
+qsa += p * (r + self.gamma * self.v[next_state] * (1 - done))
+</br>
+这里公式原型实际上为原始的状态价值方程也为确定某策略情况下的q<img width="382" height="37" alt="image" src="https://github.com/user-attachments/assets/4d23c91c-5b00-4608-bac6-437d51d1a6c0" />p为例子中，奖励r也与状态转移概率p相关所以要乘到前面
+</br>
+qsa_list.append(self.pi[s][a] * qsa)
+new_v[s] = sum(qsa_list)
+</br>
+这里表示<img width="460" height="112" alt="image" src="https://github.com/user-attachments/assets/15a805ac-e0ee-4f67-8c05-0a543621c207" />
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
