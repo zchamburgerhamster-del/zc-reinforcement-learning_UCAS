@@ -258,4 +258,22 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 总而言之，策略评估的过程为首先随便猜一个初始状态，然后用它算V1然后用V1算V2，最终这个数值会稳定到真正准确的分数<img width="25" height="26" alt="image" src="https://github.com/user-attachments/assets/86963d7f-05f0-435e-8906-a241f80b19ca" />如果这一轮算出的分数和上一轮差值较小那么结束
 #<h3 align="left">M4.3.2策略提升</h3>
 <img width="1410" height="598" alt="image" src="https://github.com/user-attachments/assets/378dd8eb-c7d6-4b02-a633-a051d4d8b0ad" />
+</br>
+策略提升个人理解
+1.<img width="71" height="38" alt="image" src="https://github.com/user-attachments/assets/0bf1bd67-1bc1-456f-bc91-727abce3c456" />：如果继续坚持老的策略pai，未来平均得分
+<img width="97" height="42" alt="image" src="https://github.com/user-attachments/assets/c0411afc-ebee-4c1e-9278-69cbd890df4b" />：在某一步试了新的动作a之后又回到策略pai得到的得分
+</br>
+2.策略提升定理
+若出现一个新的动作a（新的策略）使得<img width="235" height="41" alt="image" src="https://github.com/user-attachments/assets/bcb741ad-c7bc-4226-bcdd-d90785e695bb" />，那么：
+</br>
+<img width="297" height="102" alt="image" src="https://github.com/user-attachments/assets/c781c204-75c4-4efc-9eb6-8659c7db90f2" />
+</br>
+3.贪心算法：如何找到新策略
+</br>
+<img width="966" height="155" alt="image" src="https://github.com/user-attachments/assets/8b04e50c-e71f-4673-8aa4-7089957ea19f" />
+</br>
+简而言之就是遍历每一个动作a寻找到最大的那个，采纳为新的策略
+</br>
+<img width="977" height="102" alt="image" src="https://github.com/user-attachments/assets/7518918d-271d-47fa-9522-18d791f0e80c" />
+
 
