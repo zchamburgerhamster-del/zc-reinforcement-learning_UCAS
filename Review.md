@@ -228,7 +228,34 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 </br>
 <img width="1234" height="484" alt="image" src="https://github.com/user-attachments/assets/1e1ba2cf-91a8-4f2f-adea-b62a7ab0cfb8" />
 ///////以上有些不明白
-
-
-
+#<h1 align="left">M4-动态规划强化学习算法</h1>
+#<h2 align="left">M4.1简介概述</h2>
+1.基于动态规划的强化学习算法主要有两种：策略迭代与价值迭代；
+</br>
+2.策略迭代分为两步：策略评估与策略提升
+</br>
+3.环境准备
+<img width="793" height="732" alt="image" src="https://github.com/user-attachments/assets/4d306e21-1809-4cf4-82bb-7ec6113fc184" />
+</br>
+<img width="1294" height="166" alt="image" src="https://github.com/user-attachments/assets/957d92b5-f79a-4185-a21e-38f5724dfbfa" />
+</br>
+一个坐标一个状态 故共有行 * 列个状态s，每个状态下有4个动作
+<img width="1414" height="1134" alt="image" src="https://github.com/user-attachments/assets/bb38e85c-f8fe-4553-9853-952478b0f936" />
+</br>
+如图所示，留在原地了，所以他的状态都是乘以self与本轮的i，j
+</br>
+<img width="1526" height="998" alt="image" src="https://github.com/user-attachments/assets/a4fda9d0-bb39-4b23-8dce-d561db3889fa" />
+</br>
+状态编号如何编号的？
+<img width="1554" height="1192" alt="image" src="https://github.com/user-attachments/assets/5a01cebd-30a6-41ba-aecd-50f7c1c2f347" />
+#<h2 align="left">M4.3策略迭代</h2>
+#<h3 align="left">M4.3.1策略评估</h3>
+<img width="1392" height="452" alt="image" src="https://github.com/user-attachments/assets/6c449a82-d5f4-4779-bda4-9c0e21634cd0" />
+</br>
+<img width="636" height="511" alt="image" src="https://github.com/user-attachments/assets/d897ea4f-062e-4d24-8bed-60a29c7dd8c5" />
+</br>
+<img width="707" height="232" alt="image" src="https://github.com/user-attachments/assets/5bd5d5ac-e200-41ff-beaa-422fabdc0a45" />
+总而言之，策略评估的过程为首先随便猜一个初始状态，然后用它算V1然后用V1算V2，最终这个数值会稳定到真正准确的分数<img width="25" height="26" alt="image" src="https://github.com/user-attachments/assets/86963d7f-05f0-435e-8906-a241f80b19ca" />如果这一轮算出的分数和上一轮差值较小那么结束
+#<h3 align="left">M4.3.2策略提升</h3>
+<img width="1410" height="598" alt="image" src="https://github.com/user-attachments/assets/378dd8eb-c7d6-4b02-a633-a051d4d8b0ad" />
 
