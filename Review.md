@@ -1,4 +1,4 @@
-<img width="330" height="31" alt="image" src="https://github.com/user-attachments/assets/3a8af7ae-ddb6-4115-888e-2e851f25471c" />#<h1 align="center">强化学习笔记</h1>
+<img width="122" height="33" alt="image" src="https://github.com/user-attachments/assets/81d5cdf8-e87b-477b-be33-bf9bf778eb4d" /><img width="330" height="31" alt="image" src="https://github.com/user-attachments/assets/3a8af7ae-ddb6-4115-888e-2e851f25471c" />#<h1 align="center">强化学习笔记</h1>
 #<h1 align="left">M1基础</h1>
 #1.强化学习与有监督学习的区别，两者目标不同
 #<img width="1172" height="281" alt="image" src="https://github.com/user-attachments/assets/3b5fad11-bfeb-43ca-8504-5822c72da814" />
@@ -353,3 +353,49 @@ new_v[s] = max(qsa_list)
 </br>
 离线策略学习：线策略学习使用经验回放池将之前采样得到的样本收集起来再次利用，往往能够更好地利用历史数据，并具有更小的样本复杂度
 #<h2 align="left">M5.2时序差分基本方法</h2>
+1.回顾下蒙特卡洛对于价值函数的增量式更新
+</br>
+<img width="326" height="70" alt="image" src="https://github.com/user-attachments/assets/5027dec7-5c9b-4740-9809-0de83c29f647" />
+</br>
+2.时序差分方法只需要当前步结束即可进行计算。具体来说，时序差分算法用当前获得的奖励加上下一个状态的价值估计来作为在当前状态会获得的回报，他的更新方式如下：
+</br>
+<img width="395" height="58" alt="image" src="https://github.com/user-attachments/assets/af4755ac-7184-4eee-8957-0620e4d66f82" />
+</br>
+【个人理解上述公式】
+2.1</br>
+<img width="911" height="317" alt="image" src="https://github.com/user-attachments/assets/4a87e8b0-28ea-465a-8ced-e12e45ac62e1" />
+</br>
+2.2</br>
+我们可以把前面的<img width="122" height="33" alt="image" src="https://github.com/user-attachments/assets/1f34fc21-bb22-4d58-bf2a-a10a4fdd3efa" />
+认为是根据现实环境，我们结合实际估计出来新的v，减去我们以前估计的v，那么就得到了一个误差，这个误差用来调整策略，这正好也对应了时序差分算法在样本与环境中学习。
+</br>
+<img width="875" height="292" alt="image" src="https://github.com/user-attachments/assets/764df946-ede1-49ce-bb5d-373a166bc7bb" />
+</br>
+新的估计值 = 旧的估计值 + 学习率 × ( 误差 )
+</br>
+#<h2 align="left">M5.3Sarsa</h2>
+1.在时序差分的情境下，我们不清楚数据分布，奖励分布，价值分布，即我们不知道奖励函数和状态转移函数，那么该如何进行策略提升，那么我们可以直接利用Q的时序差分，即老的动作价值Q+插值，更新为新的Q，然后用贪婪算法选取max作为新的动作策略
+</br>
+<img width="527" height="58" alt="image" src="https://github.com/user-attachments/assets/f870a1e8-94ab-4a4d-9eb6-e91662b9f77c" />
+</br>
+2.如果在策略提升中一直根据贪婪算法得到一个确定性策略，可能会导致某些状态动作对永远没有在序列中出现
+</br>
+<img width="535" height="95" alt="image" src="https://github.com/user-attachments/assets/39bbf6fb-7d1f-44fc-88fe-88b2a4feb886" />
+</br>
+3.Sarsa算法流程
+<img width="587" height="87" alt="image" src="https://github.com/user-attachments/assets/0ea3cca7-00d4-491a-982b-20b04a86185c" />
+</br>
+<img width="571" height="412" alt="image" src="https://github.com/user-attachments/assets/09170ced-9e5d-4a33-a18f-de108885c429" />
+</br>
+简单来讲这个算法流程为：首先进入大循环（也就是Episode 循环）
+</br>
+然后根据 epsilon-greedy 选择当前动作a
+</br>
+接着进入时间步循环，根据环境反馈也就是现实中的s'等得到实际的Q，这里要用的e-greedy策略，可能选择max，也可能随机选择一个接着用差值更新Q
+它算出“实际”和“预期”的差距（TD 误差），然后用学习率alpha修正自己脑子里的 Q 表格。
+</br>
+<img width="162" height="27" alt="image" src="https://github.com/user-attachments/assets/bf9a909d-71bf-46da-9700-315ae549d5f3" />把刚才的“新位置”和“预判的下一步动作”，变成当下的“老位置”和“老动作”。
+</br>
+内层循环每走一步，都会在 Q 表格上写下新心得；当这一局结束（外层循环进入下一局）时，AI 会带着上一局写满心得的 Q 表格重新站在起点！
+外围的循环Episodes最终走向收敛！！！！！！
+</br>
