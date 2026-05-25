@@ -256,6 +256,7 @@ t+1时刻的状态只与t时刻有关但是这不是指与历史无关因为t中
 </br>
 <img width="707" height="232" alt="image" src="https://github.com/user-attachments/assets/5bd5d5ac-e200-41ff-beaa-422fabdc0a45" />
 总而言之，策略评估的过程为首先随便猜一个初始状态，然后用它算V1然后用V1算V2，最终这个数值会稳定到真正准确的分数<img width="25" height="26" alt="image" src="https://github.com/user-attachments/assets/86963d7f-05f0-435e-8906-a241f80b19ca" />如果这一轮算出的分数和上一轮差值较小那么结束
+显而易见，在计算本轮所有“路口”的v的时候要用到上一轮老的v，因为用了新的
 #<h3 align="left">M4.3.2策略提升</h3>
 <img width="1410" height="598" alt="image" src="https://github.com/user-attachments/assets/378dd8eb-c7d6-4b02-a633-a051d4d8b0ad" />
 </br>
