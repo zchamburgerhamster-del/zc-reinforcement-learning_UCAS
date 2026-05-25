@@ -332,6 +332,7 @@ new_v[s] = max(qsa_list)
 1.策略迭代算法用的是贝尔曼期望方程</br>
 <img width="442" height="87" alt="image" src="https://github.com/user-attachments/assets/c1b981fe-54d9-4cc9-9a70-50ae28533a63" /></br>
 他的过程为：评估-更新-评估-更新。。。。。。直到评估函数收敛，然后利用策略提升定理选出max的
+上面的贝尔曼期望方程可以理解为，尝试s下所有动作用其概率乘以相对应的q值，再把所有动作相加，最后找到max那个
 </br>
 2.价值迭代算法用的是贝尔曼最优方程
 </br>
