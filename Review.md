@@ -409,3 +409,21 @@ new_v[s] = max(qsa_list)
 <img width="790" height="477" alt="image" src="https://github.com/user-attachments/assets/f59df949-38c9-4fae-8c14-ef81f3384985" />
 </br>
 #<h2 align="left">M5.4多步Sarsa算法</h2>
+1.蒙特卡洛方法无偏，因为他不仅仅聚焦下一个状态与下一个奖励，但是因为他关注的太多了，导致就方差大
+</br>
+2.Sarsa算法小方差，但是有偏，仅关注下一步
+</br>
+3.解决：多步Sarsa
+</br>
+<img width="587" height="291" alt="image" src="https://github.com/user-attachments/assets/920d0d06-dd44-4aaa-9c92-822247aafa21" />
+</br>
+#<h2 align="left">多步Sarsa总结</h2>
+</br>
+<img width="822" height="397" alt="image" src="https://github.com/user-attachments/assets/50014ade-c0a9-4a2e-921c-a50030fa2d9f" />
+</br>
+往后看n步！计算差值！然后注意折扣因子的指数
+</br>
+<img width="786" height="672" alt="image" src="https://github.com/user-attachments/assets/54f1f649-c778-4701-a1cc-8536f83ce885" />
+
+</br>
+</br>
