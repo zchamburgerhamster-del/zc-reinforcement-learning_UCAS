@@ -334,8 +334,13 @@ new_v[s] = max(qsa_list)
 他的过程为：评估-更新-评估-更新。。。。。。直到评估函数收敛，然后利用策略提升定理选出max的
 上面的贝尔曼期望方程可以理解为，尝试s下所有动作用其概率乘以相对应的q值，再把所有动作相加，最后找到max那个
 </br>
+<img width="903" height="352" alt="image" src="https://github.com/user-attachments/assets/4c3752fd-2f75-4155-b6e4-6a6a4c7bdc45" />
+</br>
+<img width="963" height="397" alt="image" src="https://github.com/user-attachments/assets/7a161c67-c459-4e9a-b765-8a76bc4beb06" />
+</br>
 2.价值迭代算法用的是贝尔曼最优方程
 </br>
 <img width="391" height="54" alt="image" src="https://github.com/user-attachments/assets/2406e2c3-6f15-41f7-ac84-988f1945d697" />
 </br>
 仅维护价值V(s)，无显式策略，每次仅仅更新一轮V，直接更新策略为max那个
+#<h1 align="left">M5时序差分算法</h1>
