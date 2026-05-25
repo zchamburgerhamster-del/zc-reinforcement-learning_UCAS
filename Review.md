@@ -399,3 +399,13 @@ new_v[s] = max(qsa_list)
 内层循环每走一步，都会在 Q 表格上写下新心得；当这一局结束（外层循环进入下一局）时，AI 会带着上一局写满心得的 Q 表格重新站在起点！
 外围的循环Episodes最终走向收敛！！！！！！
 </br>
+#<h2 align="left">Sarsa总结</h2>
+1.输入输出
+</br>
+<img width="787" height="567" alt="image" src="https://github.com/user-attachments/assets/154d53fd-39c3-4b40-841b-d5f21e3ff266" />
+</br>
+2.算法流程
+</br>
+<img width="790" height="477" alt="image" src="https://github.com/user-attachments/assets/f59df949-38c9-4fae-8c14-ef81f3384985" />
+</br>
+#<h2 align="left">M5.4多步Sarsa算法</h2>
