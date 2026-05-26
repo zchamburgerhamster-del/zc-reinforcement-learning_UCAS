@@ -333,6 +333,7 @@ new_v[s] = max(qsa_list)
 <img width="442" height="87" alt="image" src="https://github.com/user-attachments/assets/c1b981fe-54d9-4cc9-9a70-50ae28533a63" /></br>
 他的过程为：评估-更新-评估-更新。。。。。。直到评估函数收敛，然后利用策略提升定理选出max的
 上面的贝尔曼期望方程可以理解为，尝试s下所有动作用其概率乘以相对应的q值，再把所有动作相加，最后找到max那个
+利用上一轮中算出来的下一个状态值评估本轮本状态的价值
 </br>
 <img width="903" height="352" alt="image" src="https://github.com/user-attachments/assets/4c3752fd-2f75-4155-b6e4-6a6a4c7bdc45" />
 </br>
