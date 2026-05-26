@@ -428,6 +428,32 @@ new_v[s] = max(qsa_list)
 往后看n步！计算差值！然后注意折扣因子的指数
 </br>
 <img width="786" height="672" alt="image" src="https://github.com/user-attachments/assets/54f1f649-c778-4701-a1cc-8536f83ce885" />
-
+</br>
+#<h2 align="left">M5.5Q-learning</h2>
+</br>
+1.Q-learning的时序查分更新方式为
+</br>
+<img width="473" height="44" alt="image" src="https://github.com/user-attachments/assets/03d3ecf1-b7f2-4595-a9c7-1f601302f1e2" />
+</br>
+2.【这种方式个人理解】
+</br>
+<img width="115" height="32" alt="image" src="https://github.com/user-attachments/assets/8aa1275b-0f50-483e-a1c4-6926beb64eed" />
+</br>
+这里为Q-learning与Sarsa的区分点，Sarsa中根据实际预估的下一个状态的动作a为利用e-greedy策略选取的动作a，而Q-learning这里为遍历动作a
+算法直接把st+1这一行在Q表格中对应的所有动作价值全部调出来，进行一次遍历求最大值的操作
+不过，当下动作a还是要利用e-greedy来选取
+完成这一切之后和Sarsa类似，不断更新，需要注意的是，在末尾并没有更新预估的动作a为下一轮的a，这是因为，a都是遍历max
+</br>
+3.Q-learning为离线策略 off-policy
+</br>
+在线策略（on-policy）算法表示行为策略和目标策略是同一个策略；
+而离线策略（off-policy）算法表示行为策略和目标策略不是同一个策略。
+</br>
+Q-learning用于更新公式的策略max和用于实际行动的离线策略e-greedy不是同一个，所以它被称为离线算法。
+解释：他用于下轮预估的a用了max，而他实际行动（即在内循环中当下的动作a用的是e-greedy）
+</br>
+Sarsa论更新还是行动都绑定同一个e-greedy采样，所以叫在线策略。观察这里<img width="441" height="103" alt="image" src="https://github.com/user-attachments/assets/b0a8ec79-7cc2-45ec-8324-daa0ce193a89" />可以得到Sarsa用于下一轮预估的a用了e-greedy，而他实际行动，在内循环中当下的动作，也用了这个e-greedy
+</br>
+</br>
 </br>
 </br>
