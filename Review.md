@@ -384,6 +384,9 @@ new_v[s] = max(qsa_list)
 <img width="535" height="95" alt="image" src="https://github.com/user-attachments/assets/39bbf6fb-7d1f-44fc-88fe-88b2a4feb886" />
 </br>
 3.Sarsa算法流程
+</br>
+<img width="250" height="50" alt="image" src="https://github.com/user-attachments/assets/0683e374-9ff6-40a7-b70c-964a9369639a" />为实际的本轮Q值，因为用到了实际的r以及预估的下一个状态，更新完毕之后，把猜测的动作与价值更新为本轮的
+</br>
 <img width="587" height="87" alt="image" src="https://github.com/user-attachments/assets/0ea3cca7-00d4-491a-982b-20b04a86185c" />
 </br>
 <img width="571" height="412" alt="image" src="https://github.com/user-attachments/assets/09170ced-9e5d-4a33-a18f-de108885c429" />
