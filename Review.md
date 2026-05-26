@@ -483,10 +483,24 @@ Q-learning为离线策略
 
 #<h2 align="left">时序差分Part总结</h2>
 </br>
+1.Sara算法
 </br>
+<img width="450" height="42" alt="image" src="https://github.com/user-attachments/assets/e53c678a-27c9-4377-b4a6-e615efc1b984" />
 </br>
+2.多步Sarsa
 </br>
+<img width="577" height="52" alt="image" src="https://github.com/user-attachments/assets/667f5a1b-1524-4775-b462-f9c881986eac" />
 </br>
+往后看n步！计算差值！然后注意折扣因子的指数
+</br>
+3.Q-learning
+</br>
+<img width="475" height="58" alt="image" src="https://github.com/user-attachments/assets/ba1d84de-8756-45f5-b260-c71c70c8e32e" />
+</br>
+Sarsa中根据实际预估的下一个状态的动作a为利用e-greedy策略选取的动作a，而Q-learning这里为遍历动作a
+算法直接把st+1这一行在Q表格中对应的所有动作价值全部调出来，进行一次遍历求最大值的操作
+Q-learning用于更新公式的策略max和用于实际行动的离线策略e-greedy不是同一个，所以它被称为离线算法。
+解释：他用于下轮预估的a用了max，而他实际行动（即在内循环中当下的动作a用的是e-greedy）
 </br>
 </br>
 </br>
