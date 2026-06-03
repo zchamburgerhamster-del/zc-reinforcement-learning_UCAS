@@ -458,11 +458,10 @@ Q-learning用于更新公式的策略max和用于实际行动的离线策略e-gr
 </br>
 Sarsa论更新还是行动都绑定同一个e-greedy采样，所以叫在线策略。观察这里<img width="441" height="103" alt="image" src="https://github.com/user-attachments/assets/b0a8ec79-7cc2-45ec-8324-daa0ce193a89" />可以得到Sarsa用于下一轮预估的a用了e-greedy，而他实际行动，在内循环中当下的动作，也用了这个e-greedy
 </br>
-
-
 4.Q-learning的算法流程
+</br>
 <img width="566" height="422" alt="image" src="https://github.com/user-attachments/assets/cf7d3ff5-6a53-4890-95c0-8ffcaa55260e" />
-
+</br>
 <img width="1242" height="558" alt="image" src="https://github.com/user-attachments/assets/7c0b8cec-8918-4533-989e-fe29444dfbcc" />
 </br>
 #<h2 align="left">Q-learning总结</h2>
