@@ -500,16 +500,32 @@ Sarsa中根据实际预估的下一个状态的动作a为利用e-greedy策略选
 Q-learning用于更新公式的策略max和用于实际行动的离线策略e-greedy不是同一个，所以它被称为离线算法。
 解释：他用于下轮预估的a用了max，而他实际行动（即在内循环中当下的动作a用的是e-greedy）
 </br>
+#<h1 align="left">M6Dyna-Q算法</h1>
+#<h2 align="left">M6.1概述</h2>
 </br>
+强化学习算法分为两种 无模型 和 有模型
 </br>
+1.无模型：Sarsa,Q-Learning
 </br>
+2.有模型：策略迭代，价值迭代，Dyna-Q 算法；特别的Dyna-Q 算法的环境模型是通过采样数据估计得到的
 </br>
+#<h2 align="left">M6.2Dyna-Q</h2>
 </br>
+Dyna-Q 使用一种叫做 Q-planning 的方法来基于模型生成一些模拟数据，然后用模拟数据和真实数据一起改进策略。
+先选取经验数据里面访问过的状态s，采取曾经在该状态s下执行过的动作a，通过学到的环境模型模拟出来后续状态
+s'与奖励r，并根据这个模拟数据<s,a,r,s'>，用 Q-learning 的更新方式来更新动作价值函数。
 </br>
+<img width="592" height="668" alt="image" src="https://github.com/user-attachments/assets/7111e956-486f-4fa0-be6a-026a654d17fa" />
 </br>
+【个人理解】Dyna-Q 就像边试错、边画地图、还爱在脑子里复盘
 </br>
+1.准备阶段初始化一个Q表格，一个环境模型M，前者记录在哪个状态下做哪个动作得分，后者记录地图规律
 </br>
+2.根据e-greedy选择当下动作a，与环境交互得到r，s'---->Q-learning-------->把刚才摸索出的环境规律M(s,a)<----r,s'记下来
 </br>
+3.【Q-Planning】复盘M，找一个过去的状态和动作a，看记录下的rm，s'm是啥再利用Q-learning更新Q表格
 </br>
+【输出】
+算法运行结束（跑完E个序列）后，整体输出的是一个收敛的Q表格（最优动作价值函数Q(s,a)），以及顺带学习到的一个环境模型M。
 </br>
 </br>
