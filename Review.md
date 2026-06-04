@@ -500,8 +500,8 @@ Sarsa中根据实际预估的下一个状态的动作a为利用e-greedy策略选
 Q-learning用于更新公式的策略max和用于实际行动的离线策略e-greedy不是同一个，所以它被称为离线算法。
 解释：他用于下轮预估的a用了max，而他实际行动（即在内循环中当下的动作a用的是e-greedy）
 </br>
-#<h1 align="left">M6Dyna-Q算法</h1>
-#<h2 align="left">M6.1概述</h2>
+#<h1 align="left">M6 Dyna-Q算法</h1>
+#<h2 align="left">M6.1 概述</h2>
 </br>
 强化学习算法分为两种 无模型 和 有模型
 </br>
