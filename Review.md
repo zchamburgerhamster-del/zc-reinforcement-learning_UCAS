@@ -556,7 +556,25 @@ DQN算法是深度强化学习的基础。在Q-Learning中的Q为一张表格，
 <img width="915" height="388" alt="image" src="https://github.com/user-attachments/assets/c8a79a96-811b-4485-add8-91eb9dc758d7" />
 </br>
 #<h3 align="left">M7.2.1 经验回放</h3>
-
+DQN 算法采用了经验回放（experience replay）方法，具体做法为维护一个回放缓冲区，将每次从环境中采样得到的四元组数据（状态、动作、奖励、下一状态）存储到回放缓冲区中，训练 Q 网络的时候再从回放缓冲区中随机采样若干数据来进行训练。
+</br>
+作用：采用经验回放可以打破样本之间的相关性，让其满足独立假设；提高样本效率。每一个样本可以被使用多次。
+</br>
+#<h3 align="left">M7.2.2 目标网络</h3>
+</br>
+按照前面讲的Qnet会导致训练不稳定，因为其核心目的是叫预测值Qw去逼近目标值<img width="248" height="28" alt="image" src="https://github.com/user-attachments/assets/2662efc0-2023-4726-933a-05af5569db4f" />
+</br>
+预测值和目标值里，用的都是同一个神经网络QW,但在没有目标网络的 DQN 里，每次智能体走了一步、更新了自己的大脑参数w之后，用来计算目标位置的公式也跟着变了
+</br>
+1.Qw
+</br>
+用于计算原来的损失函数中的<img width="78" height="23" alt="image" src="https://github.com/user-attachments/assets/767f8390-def2-4253-83f2-d459e1a4e685" />项，并且使用正常梯度下降方法来进行更新。负责输出当前的预测值
+</br>
+2.Qw-
+</br>
+专门用来计算那个目标值
+</br>
+为了让更新目标更稳定，目标网络并不会每一步都更新。具体而言，目标网络使用训练网络的一套较旧的参数，训练网络Qw-在训练中的每一步都会更新，而目标网络的参数每隔C步才会与训练网络同步一次，即w- <-w。这样做使得目标网络相对于训练网络更加稳定。
 </br>
 </br>
 </br>
