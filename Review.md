@@ -581,6 +581,8 @@ DQN算法流程
 </br>
 <img width="631" height="673" alt="image" src="https://github.com/user-attachments/assets/fdc52177-a179-46c9-8bd4-39ed75a28698" />
 </br>
+#<h2 align="left">Q-learning、DQN 及 DQN 改进算法都是基于价值（value-based）的方法，他们都是学习值函数，然后从中直接导出一个策略，没有一个显式维护策略的过程
+其中 Q-learning 是处理有限状态的算法，而 DQN 可以用来解决连续状态的问题。，这是因为前者处理离散，DQN是网络结构，大批量且连续</h2>
 </br>
 </br>
 </br>
