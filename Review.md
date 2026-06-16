@@ -592,3 +592,25 @@ DQN之后，有很多改进的算法，Double DQN 和 Dueling DQN
 </br>
 【解释】这里的优化目标TD可以理解为结合现实中的r与s算出来的目标值，用他减去模型预测出来的Q用来调整参数w
 </br>
+1.Qw网络和Qw-网络
+</br>
+Qw网络：原本的训练网络用于计算损失函数里面的Qw(s,a)项
+Qw-网络:目标网络用于计算原来损失函数里的Qw-(s,a)
+</br>
+2.在普通DQN里面采用第二套独立的Qw-目标网络并且他的权重参数每隔一段时间才更新一次由于 TD 误差目标本身就包含神经网络的输出，因此在更新网络参数的同时目标也在不断地改变，这非常容易造成神经网络训练的不稳定性。为了解决这一问题，DQN 便使用了目标网络
+</br>
+<img width="915" height="388" alt="image" src="https://github.com/user-attachments/assets/c8a79a96-811b-4485-add8-91eb9dc758d7" />
+</br>
+3.普通DQN里面结合现实和Q-learning的误差目标为<img width="200" height="38" alt="image" src="https://github.com/user-attachments/assets/bfb2aeb5-ae23-4098-8481-c086ee07a190" />，先去取出来那一行mxQ的动作a然后再计算新的Q所以这里可以简化为
+</br>
+<img width="272" height="57" alt="image" src="https://github.com/user-attachments/assets/5ba1f321-4227-4f3c-abbd-d22ab100c303" />
+</br>
+但是这种方式容易造成如果Qw-正向负向误差累积采用了同一个网络那么会产生大的误差所以把里面取maxQ的动作a的网络换为原本的网络Qw
+</br>
+<img width="328" height="86" alt="image" src="https://github.com/user-attachments/assets/cec9716f-a3d8-436d-a93b-c58dac774be6" />
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
