@@ -649,3 +649,52 @@ d.
 </br>
 假设某个状态下动作的真实 $Q$ 值应该是 $100$。理想情况： 网络乖乖学到了局势分 $V = 80$，动作优势分 $A = 20$。$80 + 20 = 100$。很完美。作妖情况 1： 网络的 $V$ 分支突然抽风，输出了 $V = 1000$。为了强行凑出 $100$ 的结果，$A$ 分支就会被迫输出 $A = -900$。$1000 + (-900) = 100$。作妖情况 2： $V$ 输出 $-500$，$A$ 输出 $600$。$-500 + 600 = 100$。你看，只要我给 $V$ 加上任意一个常数 $C$，再给 $A$ 减去同一个常数 $C$，最终加起来的 $Q$ 值永远不变。这就导致了一个可怕的后果：网络的 $V$ 和 $A$ 就像在玩跷跷板，可以漫天乱飞，互相补偿。 这种没有约束的波动会让神经网络的训练极其不稳定，根本学不到真实的“局势”和“优势”。
 </br>
+#<h1 align="left">M9 策略梯度算法REINFORCE</h1>
+#<h2 align="left">M9.1 简介</h2>
+</br>
+ 1.基于价值：Q-learning、DQN 及 DQN 改进算法
+</br>
+ 2.基于策略：策略梯度算法，他是基于策略方法的基础
+</br>
+ 基于值函数的方法主要是学习值函数，然后根据值函数导出一个策略，学习过程中并不存在一个显式的策略；而基于策略的方法则是直接显式地学习一个目标策略。
+</br>
+ #<h2 align="left">M9.2 策略梯度</h2>
+</br>
+ 1.策略学习的目标函数
+</br>
+ <img width="568" height="343" alt="image" src="https://github.com/user-attachments/assets/e556a7a0-8621-437b-a3c4-ebe3793738a6" />
+</br>
+ 2.用于更新策略的梯度
+</br>
+ <img width="582" height="350" alt="image" src="https://github.com/user-attachments/assets/d5cb2e31-be5b-4934-9037-fb31ef283ded" />
+</br>
+ 【重点】策略梯度算法为在线算法必须利用当前策略Π采样到的数据来计算梯度
+</br>
+ 3.REINFORCE 算法中的策略梯度为：
+</br>
+ <img width="491" height="97" alt="image" src="https://github.com/user-attachments/assets/4f9022f1-fb6e-4ae0-8013-00076f2dfad5" />
+</br>
+【解释】
+</br>
+ 梯度：上升最快的方向或者下降最快的方向
+</br>
+ 梯度下降：最小化机器人的轨迹误差、最小化损失函数，你就必须逆着梯度的方向走。
+</br>
+ 梯度上升：要最大化智能体获得的奖励，你就必须顺着梯度的方向走
+</br>
+ 公式解释
+</br>
+  <img width="491" height="97" alt="image" src="https://github.com/user-attachments/assets/4f9022f1-fb6e-4ae0-8013-00076f2dfad5" />
+</br>
+ <img width="568" height="512" alt="image" src="https://github.com/user-attachments/assets/e9a6c307-337a-44e9-9b8b-8e75477cae3f" />
+</br>
+  #<h2 align="left">M9.3  REINFORCE算法</h2>
+</br>
+ <img width="552" height="268" alt="image" src="https://github.com/user-attachments/assets/ff4993a8-2aa7-49d7-aece-0c217b6b6f4a" />
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
