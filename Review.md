@@ -615,7 +615,8 @@ Qw-网络:目标网络用于计算原来损失函数里的Qw-(s,a)
 </br>
 1.优势函数A
 </br>
-A:将动作价值函数Q减去状态价值V，即<img width="217" height="32" alt="image" src="https://github.com/user-attachments/assets/23cb1182-8aac-43d9-addb-7d7e95df523f" />在同一个状态下，所有动作的优势值(A)之和为 0
+A:将动作价值函数Q减去状态价值V，即<img width="217" height="32" alt="image" src="https://github.com/user-attachments/assets/23cb1182-8aac-43d9-addb-7d7e95df523f" />在同一个状态下，所有动作的优势值(A)之和为0
+ </br></br>
 2.Dueling DQN中的Q网络为
 </br>
 <img width="573" height="280" alt="image" src="https://github.com/user-attachments/assets/a588768e-8cc7-48ad-b7b5-b2802c242485" />
