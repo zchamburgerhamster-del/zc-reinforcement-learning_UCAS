@@ -556,6 +556,8 @@ DQN算法是深度强化学习的基础。在Q-Learning中的Q为一张表格，
 </br>
 <img width="915" height="388" alt="image" src="https://github.com/user-attachments/assets/c8a79a96-811b-4485-add8-91eb9dc758d7" />
 </br>
+<img width="984" height="146" alt="image" src="https://github.com/user-attachments/assets/7194a637-0803-4731-956a-3132c99d6308" />
+</br>
 #<h3 align="left">M7.2.1 经验回放</h3>
 DQN 算法采用了经验回放（experience replay）方法，具体做法为维护一个回放缓冲区，将每次从环境中采样得到的四元组数据（状态、动作、奖励、下一状态）存储到回放缓冲区中，训练 Q 网络的时候再从回放缓冲区中随机采样若干数据来进行训练。
 </br>
