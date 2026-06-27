@@ -694,6 +694,48 @@ d.
 </br>
  <img width="552" height="268" alt="image" src="https://github.com/user-attachments/assets/ff4993a8-2aa7-49d7-aece-0c217b6b6f4a" />
 </br>
+ #<h1 align="left">M10Actor-Critic 算法</h1>
+ #<h2 align="left">M10.1 Actor-Critic 简介</h2>
+</br>
+ DQN基于值函数，只学习一个价值函数；REINFORCE基于策略，只学习一个策略函数
+</br>
+ Actor-Critic 是囊括一系列算法的整体架构，他既学习价值函数，又学习策略函数
+</br>
+ #<h2 align="left">M10.2 Actor-Critic</h2>
+</br>
+ 1.REINFOCE算法用蒙特卡洛方法采样一系列动作与价值来估计Q，拟合一个值函数来指导策略进行学习，在策略梯度中，可以把梯度写为：
+</br>
+ <img width="258" height="73" alt="image" src="https://github.com/user-attachments/assets/a5aecadb-e406-40d0-8c77-5e2b0d79c99e" />
+</br>
+ </br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 </br>
 </br>
 </br>
