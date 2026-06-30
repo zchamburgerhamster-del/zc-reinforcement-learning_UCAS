@@ -703,27 +703,47 @@ d.
 </br>
  #<h2 align="left">M10.2 Actor-Critic</h2>
 </br>
- 1.REINFOCE算法用蒙特卡洛方法采样一系列动作与价值来估计Q，拟合一个值函数来指导策略进行学习，在策略梯度中，可以把梯度写为：
+ 1.Actor 的更新采用下面的策略梯度的原则
+ </br>
+ REINFOCE算法用蒙特卡洛方法采样一系列动作与价值来估计Q，拟合一个值函数来指导策略进行学习，在策略梯度中，可以把梯度写为：
 </br>
  <img width="258" height="73" alt="image" src="https://github.com/user-attachments/assets/a5aecadb-e406-40d0-8c77-5e2b0d79c99e" />
 </br>
- </br>
+ <img width="576" height="600" alt="image" src="https://github.com/user-attachments/assets/038ed2e7-0112-4b56-8421-2eff9c4ef620" />
 </br>
+ 其中形式6通过时序差分残差指导策略梯度进行学习Actor-Critic 算法则可以在每一步之后都进行更新，并且不对任务的步数做限制。前面r+v为根据实际计算得来后面为V本质上为优势函数A
 </br>
+ 2.Critic网络的损失函数为
 </br>
+ <img width="367" height="67" alt="image" src="https://github.com/user-attachments/assets/e6d1ecd3-114e-4266-a519-e6ae1b604dd5" />
 </br>
+ 更新的梯度为
 </br>
+ <img width="526" height="117" alt="image" src="https://github.com/user-attachments/assets/16155f04-d3da-437d-8c06-752561fd6645" />
 </br>
+ 3.AC的算法流程为
 </br>
+ <img width="520" height="247" alt="image" src="https://github.com/user-attachments/assets/b42990f4-e28a-4b96-aeed-6fefe32b2d7a" />
 </br>
+【个人理解】
 </br>
+ A.(1)中提到的值函数g是用来更新Actor函数的损失函数
 </br>
+ 这里的V函数（由 Critic 网络计算得出）就是用来评估当前状态的好坏的。算出来的这个TD Error会被直接代入到最上面的策略梯度公式g中，作为“权重”去指导 Actor网络更新参数\theta。
 </br>
+ Actor输入：当前的环境状态 (State)，即 s_t
 </br>
+ Actor输出：动作的概率分布 。如果是离散动作（比如上下左右），输出就是每个动作的概率；如果是连续动作（比如控制机器人的关节扭矩），输出通常是动作分布的均值和方差
 </br>
+ B.(2)中提到的值函数是用来更新Critic函数的损失函数
 </br>
+Critic输入：当前的环境状态 (State)，即 s_t
 </br>
+Critic输出 (： 一个标量数值V_\omega(s_t)，代表状态s_t的预期总回报（即状态价值）。
 </br>
+ Critic 的目标是让自己的打分 V_\omega(s_t)尽可能接近真实价值。在强化学习中，真实的未来总价值很难获得，所以我们用“当前的奖励 + 下一步的打分”作为目标（也就是 TD 目标）：r + \gamma V_\omega(s_{t+1})
+</br>
+ C.算法流程
 </br>
 </br>
 </br>
